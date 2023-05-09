@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for i in range(0, 26):
-    print(f'{(97 + i) :c}', end="")
+for ch in 'abcdefghijklmnopqrstuvwxyz':
+    print(ch, end="")
