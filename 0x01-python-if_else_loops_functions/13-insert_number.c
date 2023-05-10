@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * insert_node - hi
  * @head: hi
@@ -7,7 +8,7 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *ptr = *head, newnode;
+	listint_t *ptr = *head, *newnode;
 
 	if (!*head)
 	{
