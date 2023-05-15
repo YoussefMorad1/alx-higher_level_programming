@@ -9,7 +9,7 @@
  * Return: hi
  */
 int ispali(listint_t *h, listint_t **ptr, int ln, int c){
-	int tmp;
+	int tmp = 1;
 
 	if (c < ln)
 	{
