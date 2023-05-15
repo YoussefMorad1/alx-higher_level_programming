@@ -4,17 +4,16 @@
  * ispali - hi
  * @h: hi
  * @ptr: hi
- * @ln: hi
- * @c: hi
  * Return: hi
  */
-int ispali(listint_t *h, listint_t **ptr){
+int ispali(listint_t *h, listint_t **ptr)
+{
 	int tmp = 1;
 
 	if (h->next)
 	{
 		tmp = ispali(h->next, ptr) && ((*ptr)->n == h->n);
-		(*ptr) = (*ptr) -> next;
+		(*ptr) = (*ptr)->next;
 		return (tmp);
 	}
 	else
@@ -34,19 +33,14 @@ int ispali(listint_t *h, listint_t **ptr){
 int is_palindrome(listint_t **head)
 {
 	listint_t *tail = *head;
-	int ln = 1, x;
+	int x;
 	listint_t **ptr = malloc(sizeof(*ptr));
-	*ptr = *head;
 
+	*ptr = *head;
 	if (!*head)
 	{
 		free(ptr);
 		return (1);
-	}
-	while(tail->next)
-	{
-		tail = tail->next;
-		ln++;
 	}
 	x = ispali(*head, ptr);
 	free(ptr);
