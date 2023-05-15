@@ -32,7 +32,6 @@ int ispali(listint_t *h, listint_t **ptr)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tail = *head;
 	int x;
 	listint_t **ptr = malloc(sizeof(*ptr));
 
