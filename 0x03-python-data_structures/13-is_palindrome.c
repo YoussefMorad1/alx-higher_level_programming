@@ -1,6 +1,30 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
+ * ispali - hi
+ * @h: hi
+ * @ptr: hi
+ * @ln: hi
+ * @c: hi
+ * Return: hi
+ */
+int ispali(listint_t *h, listint_t **ptr, int ln, int c){
+	int tmp;
+
+	if (c < ln)
+	{
+		tmp = ispali(h->next, ptr, ln, c+1) && ((*ptr)->n == h->n);
+		(*ptr) = (*ptr) -> next;
+		return (tmp);
+	}
+	else if (c == ln)
+	{
+		tmp = (h->n == (*ptr)->n);
+		(*ptr) = (*ptr)->next;
+		return (tmp);
+	}
+}
+/**
  * is_palindrome - hi
  *
  * @head: hi
@@ -10,7 +34,8 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *tail = *head;
 	int ln = 1, i = 0;
-	listint_t **arr, *ptr = *head;
+	listint_t **ptr = malloc(sizeof(*ptr));
+	*ptr = *head;
 
 	if (!*head)
 		return (1);
@@ -19,20 +44,5 @@ int is_palindrome(listint_t **head)
 		tail = tail->next;
 		ln++;
 	}
-	arr = malloc(ln * sizeof(*arr));
-	for (i = 0; i < ln; i++)
-	{
-		arr[i] = ptr;
-		ptr = ptr->next;
-	}
-	for (i = 0; i < ln / 2; i++)
-	{
-		if (arr[i]->n != arr[ln - i - 1]->n)
-		{
-			free(arr);
-			return (0);
-		}
-	}
-	free(arr);
-	return (1);
+	return (ispali(*head, ptr, ln, 1));
 }
