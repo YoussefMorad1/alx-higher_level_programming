@@ -12,5 +12,3 @@ def safe_print_list_integers(my_list=[], x=0):
             return ct
     print()
     return ct
-
-safe_print_list_integers(['hi', 2], 2)
