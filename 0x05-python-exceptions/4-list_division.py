@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def st_division(my_list_1, my_list_2, list_length):
+def list_division(my_list_1, my_list_2, list_length):
     ls = []
     for i in range(list_length):
         c = 0
@@ -12,5 +12,5 @@ def st_division(my_list_1, my_list_2, list_length):
         except Exception:
             print('wrong type')
         finally:
-            ls[i] = c
+            ls.append(c)
     return ls
