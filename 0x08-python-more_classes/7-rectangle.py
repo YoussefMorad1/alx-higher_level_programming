@@ -56,7 +56,7 @@ class Rectangle:
             return ""
         rectangle = ""
         for i in range(self.height):
-            rectangle += print_symbol * self.width + \
+            rectangle += Rectangle.print_symbol * self.width + \
                 ("\n" if i < self.height - 1 else "")
         return rectangle
 
