@@ -77,5 +77,6 @@ class Rectangle:
             return rect_1
         return rect_2
 
-    def square(self, size=0):
+    @staticmethod
+    def square(size=0):
         return Rectangle(size, size)
