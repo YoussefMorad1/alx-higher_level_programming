@@ -11,10 +11,9 @@ TypeError: first_name must be a string
 Traceback (most recent call last):
 TypeError: last_name must be a string
 
->>> say_my_name() #doctest: +ELLIPSIS
-:x
+#>>> say_my_name() #doctest: +ELLIPSIS
+Tracback (most recent call last):
 TypeError: ...
 
->>> say_my_name('hi') #doctest: +ELLIPSIS
-Traceback (most recent call last):
-TypeError: ...
+>>> say_my_name('hi')
+My name is hi 

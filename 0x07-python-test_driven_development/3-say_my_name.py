@@ -4,7 +4,7 @@ This module says 'say my name'
 """
 
 
-def say_my_name(fname, lname):
+def say_my_name(fname, lname=""):
     """
     say my name function
     """
