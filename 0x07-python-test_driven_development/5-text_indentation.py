@@ -18,4 +18,4 @@ def text_indentation(text):
             s += ch
         if ch in ('.', '?', ':'):
             s += '\n\n'
-    print(s)
+    print(s, end="")
