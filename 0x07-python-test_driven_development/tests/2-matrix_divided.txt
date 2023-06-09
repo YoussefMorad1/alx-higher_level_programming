@@ -21,9 +21,9 @@ ZeroDivisionError: ...
 ...     [1, 2, 'a'],
 ...     [2, 3, 4]
 ...     ]
->>> print(matrix_divided(mat2, 2)) #doctest: +ELLIPSIS
+>>> print(matrix_divided(mat2, 2))
 Traceback (most recent call last):
-TypeError: ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> mat = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_divided(mat, 'a') #doctest: +ELLIPSIS
 Traceback (most recent call last):
