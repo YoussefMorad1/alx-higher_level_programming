@@ -27,8 +27,8 @@ TypeError: ...
 >>> print(matrix_divided(mat, 'a')) #doctest: +ELLIPSIS
 Traceback (most recent call last):
 TypeError: ...
->>> mat = [[3]]
->>> print(matrix_divided(mat, 3))
+>>> mat2 = [[3]]
+>>> print(matrix_divided(mat2, 3))
 [[1.0]]
 >>> matrix_divided() #doctest: +ELLIPSIS
 Traceback (most recent call last):
@@ -36,3 +36,5 @@ TypeError: ...
 >>> matrix_divided(mat) #doctest: +ELLIPSIS
 Traceback (most recent call last):
 TypeError: ...
+>>> print(matrix_divided(mat, float('inf'))) #doctest: +ELLIPSIS
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
