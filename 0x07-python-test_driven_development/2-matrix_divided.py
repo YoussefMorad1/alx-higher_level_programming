@@ -13,8 +13,9 @@ def matrix_divided(mat, div):
         raise TypeError('div must be a number')
     if div == 0:
         raise ZeroDivisionError('division by zero')
-    mat2 = mat.copy()
-    for row in mat2:
-        for i in range(len(row)):
-            row[i] = round(row[i] / div, 2)
+    mat2 = list()
+    for i in range(len(mat)):
+        mat2.append(mat[i][:])
+        for j in range(len(mat[i])):
+            mat2[i][j] = round(mat[i][j] / div, 2)
     return mat2

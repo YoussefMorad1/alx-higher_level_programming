@@ -27,3 +27,6 @@ TypeError: ...
 >>> print(matrix_divided(mat, 'a')) #doctest: +ELLIPSIS
 Traceback (most recent call last):
 TypeError: ...
+>>> mat = [[3]]
+>>> print(matrix_divided(mat, 3))
+[[1.0]]
