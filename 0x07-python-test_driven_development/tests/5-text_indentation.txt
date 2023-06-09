@@ -48,3 +48,12 @@ TypeError: text must be a string
 hello.
 <BLANKLINE>
 Im youssef
+
+>>> text_indentation('Holberton. School? How are you: John')
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
