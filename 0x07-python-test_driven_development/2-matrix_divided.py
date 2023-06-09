@@ -17,8 +17,8 @@ def matrix_divided(mat, div):
     if type(mat) != list or type(mat[0]) != list or \
             [type(x) in (int, float) for row in mat for x in row].count(True) \
             != len([x for row in mat for x in row]):
-        raise TypeError('matrix must be a matrix
-                        (list of lists) of integers/floats')
+        raise TypeError('matrix must be a matrix ' +
+                        '(list of lists) of integers/floats')
     if [len(row) for row in mat].count(len(mat[0])) != len(mat):
         raise TypeError('Each row of the matrix must have the same size')
     if type(div) not in (int, float):
