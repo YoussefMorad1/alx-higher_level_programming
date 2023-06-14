@@ -12,8 +12,9 @@ class Student:
 
     def to_json(self, att=None):
         """ to json method """
-        dic = vars(self)
-        for key in dic.keys():
+        dic = dict(vars(self))
+        keys = list(dic.keys())
+        for key in keys:
             if att is not None and key not in att:
                 del dic[key]
         return dic
