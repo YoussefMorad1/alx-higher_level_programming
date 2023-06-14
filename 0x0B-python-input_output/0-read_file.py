@@ -2,5 +2,5 @@
 """ module of read file """
 def read_file(filename=""):
     """ read file funcion """
-    with open(filename) as f:
-        print(f.read())
+    with open(filename, encoding='UTF-8') as f:
+        print(f.read(), end='')
