@@ -22,4 +22,9 @@ TypeError: ...
 
 >>> bg.integer_validator() # doctest: +ELLIPSIS
 Traceback (most recent call last):
-TypeError: ...
+TypeError: ..
+
+
+>>> bg.integer_validator("myint", (1, 2))
+Traceback (most recent call last):
+TypeError: myint must be an integer
