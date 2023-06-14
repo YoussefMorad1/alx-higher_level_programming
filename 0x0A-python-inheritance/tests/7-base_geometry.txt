@@ -1,0 +1,20 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("myint", 5)
+
+>>> bg.integer_validator("myint", "hello")
+Traceback (most recent call last):
+TypeError: myint must be an integer
+
+>>> bg.integer_validator("myint", -1)
+Traceback (most recent call last):
+ValueError: myint must be greater than 0
+
+>>> bg.integer_validator("myint", 0)
+Traceback (most recent call last):
+ValueError: myint must be greater than 0
+
+>>> bg.integer_validator("hello") # doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError: ...
