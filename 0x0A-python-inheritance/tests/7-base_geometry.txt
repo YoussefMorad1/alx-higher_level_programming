@@ -28,3 +28,9 @@ TypeError: ...
 >>> bg.integer_validator("myint", (1, 2))
 Traceback (most recent call last):
 TypeError: myint must be an integer
+
+
+>>> bg.integer_validator("myint", {'hi', 'bye'})
+Traceback (most recent call last):
+TypeError: myint must be an integer
+
