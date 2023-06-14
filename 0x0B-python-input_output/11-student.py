@@ -22,4 +22,4 @@ class Student:
     def reload_from_json(self, json):
         """ reload from json """ 
         for key in json.keys():
-            self[key] = json[key]
+            setattr(self, key, json[key])
