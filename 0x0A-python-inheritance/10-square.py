@@ -16,4 +16,4 @@ def Square(Rectangle):
 
     def area(self):
         """ calc area of square """
-        return size * size
+        return self.__size * self.__size
