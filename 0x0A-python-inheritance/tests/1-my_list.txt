@@ -6,3 +6,9 @@
 [2, 1]
 >>> lst.print_sorted()
 [1, 2]
+>>> lst = MyList([5, 3, 3, -1, 0])
+>>> lst.print_sorted()
+[-1, 0, 3, 3, 5]
+>>> lst = MyList()
+>>> lst.print_sorted()
+[]
