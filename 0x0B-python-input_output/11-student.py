@@ -20,6 +20,6 @@ class Student:
         return dic
 
     def reload_from_json(self, json):
-        """ reload from json """ 
+        """ reload from json """
         for key in json.keys():
             setattr(self, key, json[key])
