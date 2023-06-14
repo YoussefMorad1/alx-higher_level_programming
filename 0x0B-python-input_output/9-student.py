@@ -12,4 +12,4 @@ class Student:
     
     def to_json(self):
         """ to json method """
-        return {'first_name':first_name, 'last_name':last_name, 'age':age}
+        return {'first_name':self.first_name, 'last_name':self.last_name, 'age':self.age}
