@@ -5,4 +5,4 @@ import json
 
 def from_json_string(str):
     """ from json to obj function """
-    return json.load(str)
+    return json.loads(str)
