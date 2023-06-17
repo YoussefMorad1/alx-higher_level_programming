@@ -71,9 +71,13 @@ class Test(unittest.TestCase):
         rec1 = Rectangle(5, 5, 1)
         self.assertEqual(f'[Rectangle] ({rec1.id}) 1/0 - 5/5', rec1.__str__())
 
-    def test_update(self):
+    def test_update_args(self):
         r1 = Rectangle(10, 10, 10, 10)
-        
+
+        rep = r1.__str__()
+        r1.update()
+        self.assertEqual(rep, r1.__str__())
+
         r1.update(89)
         self.assertEqual(r1.id, 89)
 
@@ -99,6 +103,29 @@ class Test(unittest.TestCase):
         self.assertEqual(r1.x, 4)
         self.assertEqual(r1.y, 5)
 
+    def test_upddate_kwargs(self):
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(id=1)
+        self.assertEqual(r1.id, 1)
+        
+        r1.update(width=12)
+        self.assertEqual(r1.width, 12)
+
+        r1.update(height=12)
+        self.assertEqual(r1.height, 12)
+        
+        r1.update(x=12)
+        self.assertEqual(r1.x, 12)
+
+        r1.update(y=12)
+        self.assertEqual(r1.y, 12)
+
+        r1.update(id=2, width=3, x=5)
+        self.assertEqual(r1.id, 2)
+        self.assertEqual(r1.width, 3)
+        self.assertEqual(r1.x, 5)
+
     def test_update_wrong_input(self):
         r1 = Rectangle(89, 2, 3, 4, 5)
         
@@ -111,6 +138,16 @@ class Test(unittest.TestCase):
         with self.assertRaises(TypeError):
             r1.update(89, 2, 3, 0, 'y')
 
+
+        with self.assertRaises(TypeError):
+            r1.update(height='height')
+        with self.assertRaises(TypeError):
+            r1.update(width='width')
+        with self.assertRaises(TypeError):
+            r1.update(x='x')
+        with self.assertRaises(TypeError):
+            r1.update(y='y')
+
         with self.assertRaises(ValueError):
             r1.update(98, -1)
         with self.assertRaises(ValueError):
@@ -119,3 +156,17 @@ class Test(unittest.TestCase):
             r1.update(98, 2, 3, -1)
         with self.assertRaises(ValueError):
             r1.update(98, 2, 3, 4, -1)
+
+
+        with self.assertRaises(ValueError):
+            r1.update(width=-1)
+        with self.assertRaises(ValueError):
+            r1.update(height=-1)
+        with self.assertRaises(ValueError):
+            r1.update(x=-1)
+        with self.assertRaises(ValueError):
+            r1.update(y=-1)
+
+    def test_to_dictionary(self):
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(sorted(r1.to_dictionary()), sorted({'id': 5, 'width': 1, 'height': 2, 'x': 3, 'y': 4}))

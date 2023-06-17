@@ -62,10 +62,15 @@ class Rectangle(Base):
             raise ValueError('y must be >= 0')
         self.__y = val
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         attributes = ['id', 'width', 'height', 'x', 'y']
-        for i in range(len(args)):
-            setattr(self, attributes[i], args[i])
+        if len(args) > 0:
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
+        else:
+            for key, val in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, val)
 
     def area(self):
         """return area of the rectangle
@@ -87,3 +92,10 @@ class Rectangle(Base):
         """return str reperesentation of rectangle
         """
         return f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
+
+    def to_dictionary(self):
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        dic = {}
+        for att in attributes:
+            dic[att] = getattr(self, att)
+        return dic
