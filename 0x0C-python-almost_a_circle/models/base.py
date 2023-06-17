@@ -44,3 +44,25 @@ class Base:
         str_to_save = cls.to_json_string(list_dics)
         with open(cls.__name__ + '.json', 'w', encoding='UTF-8') as f:
             f.write(str_to_save)
+
+    @classmethod
+    def create(cls, **dict):
+        obj = None
+        if cls.__name__ == 'Rectangle':
+            obj = cls(1, 2)
+        elif cls.__name__ == 'Square':
+            obj = cls(1)
+        else:
+            obj = cls()
+        obj.update(**dict)
+        return obj
+
+    @classmethod
+    def load_from_file(cls):
+        ans = []
+        with open(cls.__name__ + '.json', 'r', encoding='UTF-8') as file:
+            filetxt = file.read()
+            list_dict = cls.from_json_string(filetxt)
+            for dic in list_dict:
+                ans.append(cls.create(**dic))
+        return ans
