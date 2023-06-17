@@ -70,3 +70,52 @@ class Test(unittest.TestCase):
 
         rec1 = Rectangle(5, 5, 1)
         self.assertEqual(f'[Rectangle] ({rec1.id}) 1/0 - 5/5', rec1.__str__())
+
+    def test_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+
+        r1.update(89, 2)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.y, 5)
+
+    def test_update_wrong_input(self):
+        r1 = Rectangle(89, 2, 3, 4, 5)
+        
+        with self.assertRaises(TypeError):
+            r1.update(89, 2, 'height')
+        with self.assertRaises(TypeError):
+            r1.update(89, 'width')
+        with self.assertRaises(TypeError):
+            r1.update(89, 2, 3, 'x')
+        with self.assertRaises(TypeError):
+            r1.update(89, 2, 3, 0, 'y')
+
+        with self.assertRaises(ValueError):
+            r1.update(98, -1)
+        with self.assertRaises(ValueError):
+            r1.update(98, 2, -1)
+        with self.assertRaises(ValueError):
+            r1.update(98, 2, 3, -1)
+        with self.assertRaises(ValueError):
+            r1.update(98, 2, 3, 4, -1)
