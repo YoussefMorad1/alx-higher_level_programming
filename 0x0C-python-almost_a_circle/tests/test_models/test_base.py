@@ -35,6 +35,18 @@ class Test(unittest.TestCase):
         self.assertEqual(Base.to_json_string(dic), '[]')
         dic = []
         self.assertEqual(Base.to_json_string(dic), '[]')
+    
+    def test_from_json_string(self):
+        jsonstr = '[{"hi": 1, "bye": "try", "22": "jo"}]'
+        self.assertEqual(Base.from_json_string(jsonstr),
+                         [{'hi': 1, 'bye': 'try', '22': 'jo'}])
+        jsonstr = '[{"1": "2"}, {"2": "3"}]'
+        self.assertEqual(Base.from_json_string(jsonstr),
+                         [{'1': '2'}, {'2': '3'}])
+        jsonstr = None
+        self.assertEqual(Base.from_json_string(jsonstr), [])
+        jsonstr = '[]'
+        self.assertEqual(Base.from_json_string(jsonstr), [])
 
     def test_save_to_file(self):
         Rectangle = __import__('models').rectangle.Rectangle

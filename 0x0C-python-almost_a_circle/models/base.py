@@ -28,6 +28,12 @@ class Base:
         strr = json.dumps(list_dic)
         return strr
 
+    @staticmethod
+    def from_json_string(json_str):
+        if json_str is None or len(json_str) == 0:
+            return []
+        return json.loads(json_str)
+
     @classmethod
     def save_to_file(cls, list_objs):
         list_dics = []
