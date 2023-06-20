@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Rectangle Module """
+""" This Module has Rectangle Class """
 #Base = __import__('models/base').Base
 from base import Base
 
