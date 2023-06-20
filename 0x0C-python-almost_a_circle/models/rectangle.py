@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-""" This Module has Rectangle Class """
-from base import Base
+"""This Module has Rectangle Class
+"""
+from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle Class that really loves you"""
+    """Rectangle Class that really loves you
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor"""
