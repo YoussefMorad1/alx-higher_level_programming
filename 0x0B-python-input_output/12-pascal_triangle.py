@@ -2,11 +2,15 @@
 """
 pascal traingle module
 """
+
+
 def pascal_triangle(n):
     """
     pascal function returns list of list
     """
     res = []
+    if n <= 0:
+        return res
     for i in range(n):
         res.append([0 for _ in range(i+1)])
     res[0][0] = 1
