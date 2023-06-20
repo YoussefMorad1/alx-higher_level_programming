@@ -64,6 +64,8 @@ class Rectangle(base.Base):
         self.__y = val
 
     def update(self, *args, **kwargs):
+        """update attributes of the instance
+        """
         attributes = ['id', 'width', 'height', 'x', 'y']
         if len(args) > 0:
             for i in range(len(args)):
@@ -95,6 +97,9 @@ class Rectangle(base.Base):
         return f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
 
     def to_dictionary(self):
+        """return a dictionary with each attribute as key
+        and related to its value
+        """
         attributes = ['id', 'width', 'height', 'x', 'y']
         dic = {}
         for att in attributes:

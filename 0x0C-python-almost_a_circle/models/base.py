@@ -61,6 +61,3 @@ class Base:
             for dic in list_dict:
                 ans.append(cls.create(**dic))
         return ans
-
-    def fun(self):
-        pass
