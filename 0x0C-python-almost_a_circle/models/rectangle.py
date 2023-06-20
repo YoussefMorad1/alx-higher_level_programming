@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This Module has Rectangle Class
 """
-import base
+import models.base as base
 
 
 class Rectangle(base.Base):
