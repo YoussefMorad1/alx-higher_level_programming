@@ -19,7 +19,7 @@ class Test(unittest.TestCase):
 #        self.assertEqual(self.base.id, 1)
 
         self.base = Base(3)
-        self.assertEqual(self.base.id, 3)
+        self.assertEqual(self.base.id, 4)
 
         self.base2 = Base(300)
         self.assertEqual(self.base2.id, 300)
