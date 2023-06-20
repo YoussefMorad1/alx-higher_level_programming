@@ -4,9 +4,6 @@ import json
 
 
 class Base:
-    """
-    Base class to manage IDs
-    """
     __nb_objects = 0
 
     def __init__(self, id=None):
