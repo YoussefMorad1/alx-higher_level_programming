@@ -11,12 +11,12 @@ from models.square import Square
 class Test(unittest.TestCase):
     """Test Class for base class"""
     def test_ids(self):
-#        self.base = Base()
-#        self.assertEqual(self.base.id, 1)
+        #        self.base = Base()
+        #        self.assertEqual(self.base.id, 1)
 
-#       self.base2 = Base()
-#       self.assertEqual(self.base2.id, 2)
-#        self.assertEqual(self.base.id, 1)
+        #       self.base2 = Base()
+        #       self.assertEqual(self.base2.id, 2)
+        #        self.assertEqual(self.base.id, 1)
 
         self.base = Base(3)
         self.assertEqual(self.base.id, 3)
@@ -24,8 +24,8 @@ class Test(unittest.TestCase):
         self.base2 = Base(300)
         self.assertEqual(self.base2.id, 300)
 
-#        self.base = Base()
-#        self.assertEqual(self.base.id, 3)
+        #        self.base = Base()
+        #        self.assertEqual(self.base.id, 3)
 
     def test_to_json_string(self):
         dic = {'hi': 1, 'bye': 'try', '22': 'jo'}
@@ -37,7 +37,7 @@ class Test(unittest.TestCase):
         self.assertEqual(Base.to_json_string(dic), '[]')
         dic = []
         self.assertEqual(Base.to_json_string(dic), '[]')
-    
+
     def test_from_json_string(self):
         jsonstr = '[{"hi": 1, "bye": "try", "22": "jo"}]'
         self.assertEqual(Base.from_json_string(jsonstr),
@@ -74,7 +74,6 @@ class Test(unittest.TestCase):
         self.assertTrue(r1 is not r2)
         self.assertTrue(r1 != r2)
 
-
         r1 = Square(5, 0, 2)
         r1_dictionary = r1.to_dictionary()
         r2 = Square.create(**r1_dictionary)
@@ -94,7 +93,7 @@ class Test(unittest.TestCase):
         list_rectangles_output = Rectangle.load_from_file()
         for i in range(len(list_rectangles_input)):
             self.assertEqual(list_rectangles_input[i].__str__(),
-                        list_rectangles_output[i].__str__())
+                             list_rectangles_output[i].__str__())
 
         s1 = Square(5)
         s2 = Square(7, 9, 1)
@@ -104,4 +103,3 @@ class Test(unittest.TestCase):
         for i in range(len(list_rectangles_input)):
             self.assertEqual(list_squares_input[i].__str__(),
                              list_squares_output[i].__str__())
-
