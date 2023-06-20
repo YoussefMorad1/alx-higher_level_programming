@@ -95,7 +95,7 @@ class Rectangle(base.Base):
         """return str reperesentation of rectangle
         """
         return f'[Rectangle] ({self.id}) ' +\
-        f'{self.x}/{self.y} - {self.width}/{self.height}'
+               f'{self.x}/{self.y} - {self.width}/{self.height}'
 
     def to_dictionary(self):
         """return a dictionary with each attribute as key
