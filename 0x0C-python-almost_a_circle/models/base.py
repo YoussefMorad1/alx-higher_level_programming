@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ This module loves you """
 import json
+import rectangle
 
-sadfasdfasd
+
 class Base:
     """
     Base class to handle IDs
