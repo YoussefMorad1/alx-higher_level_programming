@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""Square Module
+"""Module that has the Square Class
 """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square Class
+    """Square Class that inherits the Rectangle but
+    width = height
     """
     def __init__(self, size, x=0, y=0, id=None):
-        """Square constructor
-        """
         super().__init__(size, size, x, y, id)
-    
+
     @property
     def size(self):
         return self.width
@@ -22,6 +21,9 @@ class Square(Rectangle):
         self.height = val
 
     def update(self, *args, **kwargs):
+        """
+        update attributes of the square instance
+        """
         attributes = ['id', 'size', 'x', 'y']
         if len(args) > 0:
             for i in range(len(args)):
@@ -32,10 +34,13 @@ class Square(Rectangle):
                     setattr(self, key, val)
 
     def __str__(self):
+        """convert instance into printable string
+        """
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
 
-
     def to_dictionary(self):
+        """convert attributes to dictionary
+        """
         attributes = ['id', 'size', 'x', 'y']
         dic = {}
         for att in attributes:
