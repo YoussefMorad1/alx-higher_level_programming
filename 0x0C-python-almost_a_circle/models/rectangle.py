@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """This Module has Rectangle Class
 """
-from models.base import Base
+import base
 
 
-class Rectangle(Base):
+class Rectangle(base.Base):
     """Rectangle Class that really loves you
     """
 
