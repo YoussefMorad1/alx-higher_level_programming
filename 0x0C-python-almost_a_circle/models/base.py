@@ -4,12 +4,12 @@ import json
 
 
 class Base:
+    """
+    Base class to handle IDs
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        constructor of the Base class
-        """
         if id is not None:
             self.id = id
         else:
