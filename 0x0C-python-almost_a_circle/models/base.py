@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ This module loves you """
 import json
-import models.rectangle
 
 
 class Base:
