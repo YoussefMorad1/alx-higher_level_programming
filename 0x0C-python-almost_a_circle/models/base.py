@@ -55,9 +55,12 @@ class Base:
     @classmethod
     def load_from_file(cls):
         ans = []
-        with open(cls.__name__ + '.json', 'r', encoding='UTF-8') as file:
-            filetxt = file.read()
-            list_dict = cls.from_json_string(filetxt)
-            for dic in list_dict:
-                ans.append(cls.create(**dic))
+        try:
+            with open(cls.__name__ + '.json', 'r', encoding='UTF-8') as file:
+                filetxt = file.read()
+                list_dict = cls.from_json_string(filetxt)
+                for dic in list_dict:
+                    ans.append(cls.create(**dic))
+        except:
+            ans = []
         return ans
