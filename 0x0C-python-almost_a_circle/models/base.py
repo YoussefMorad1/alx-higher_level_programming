@@ -61,6 +61,6 @@ class Base:
                 list_dict = cls.from_json_string(filetxt)
                 for dic in list_dict:
                     ans.append(cls.create(**dic))
-        except:
+        except Exception:
             ans = []
         return ans
