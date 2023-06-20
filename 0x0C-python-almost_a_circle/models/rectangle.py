@@ -94,7 +94,8 @@ class Rectangle(base.Base):
     def __str__(self):
         """return str reperesentation of rectangle
         """
-        return f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
+        return f'[Rectangle] ({self.id}) ' +\
+        f'{self.x}/{self.y} - {self.width}/{self.height}'
 
     def to_dictionary(self):
         """return a dictionary with each attribute as key
